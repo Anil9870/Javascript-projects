@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Roboto:wght@400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --dark : rgba(1, 0, 0, 0.666);
+    --light : rgba(215, 218, 220, 0.923);
+    --error : rgba(215, 70, 22, 0.912);
+    --success : rgba(28, 226, 94, 0.545);
+    --warning : rgba(194, 210, 20, 0.907);
+    --info : rgba(71, 35, 190, 0.973);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--dark);
+}
+
+.notifications {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+}
+
+.notifications :where(.toast, .column) {
+    display: flex;
+    align-items: center;
+}
+
+.notifications .toast {
+    list-style: none;
+    width: 400px;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    padding: 16px 17px;
+    margin-bottom: 10px;
+    background: var(--light);
+    justify-content: space-between;
+}
+
+.toast::before {
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 50%;
+    bottom: 0px;
+    left: 0px;
+}
+
+.toast.success::before {
+    background: var(--success);
+}
+
+.toast.error::before {
+    background: var(--error);
+}
+
+.toast.warning::before {
+    background: var(--warning)
+}
+
+.toast.info::before {
+    background: var(--info);
+}
+
+.toast.success .column i {
+    color: var(--success);
+}
+
+.toast.error .column i {
+    color: var(--error);
+}
+
+.toast.warning .column i {
+    color: var(--warning)
+}
+
+.toast.info .column i {
+    color: var(--info);
+}
+
+.toast .column i {
+    font-size: 1.75rem;
+}
+
+.toast .column span {
+    font-size: 1.07rem;
+    margin-left: 12px;
+}
+
+.toast i:last-child {
+    cursor: pointer;
+    color: burlywood
+}
+
+.toast i:last-child:hover {
+    color: var(--dark)
+
+}
+
